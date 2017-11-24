@@ -40,7 +40,7 @@ const appRoutes: Routes = [
     HttpModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA6N9reZADbpgvVbpo8w7Oq0cjKlBcdOlw'
+      apiKey: '<YOUR GOOGLE API KEY>'
     }),
     RouterModule.forRoot(
       appRoutes,
