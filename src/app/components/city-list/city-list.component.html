@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row topconatiner">
+        <div class="col-lg-6">
+            <div class="input-group">
+              <input type="text"
+              required minlength="4"
+              [(ngModel)]="weatherForCity"
+              class="form-control"
+              placeholder="City"
+              aria-label="Search for...">
+              <span class="input-group-btn">
+                <button
+                class="btn btn-secondary"
+                type="button"
+                (click)="getMeta(weatherForCity)">Go!</button>
+              </span>
+            </div>
+          </div>
+    </div>
+    <div *ngIf="cityMetaList">
+        <div class="card-columns">
+          <div class="card" *ngFor="let v of cityMetaList">
+
+            <div class="card-block" style="padding: 3px 3px 3px 3px">
+              <app-city-detail [city]="v" [weatherForCity]="weatherForCity"></app-city-detail>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+

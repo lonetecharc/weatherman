@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div *ngIf="consolidatedWeatherList">
+    <div class="row">
+      <div class="col">
+          <h1>{{selected_city_name}}</h1>
+      </div>
+      <div class="col" style="text-align:right">
+        <button class="btn btn-primary" (click)="GoBack()">Back</button>
+      </div>
+    </div>
+      <table class="table">
+          <thead class="thead-inverse">
+            <tr>
+              <th>As On </th>
+              <th>State</th>
+              <th>Wind Speed</th>
+              <th>Wind Direction</th>
+              <th>Temp (Min - Max)</th>
+              <th>Air Pressure</th>
+              <th>Humidity</th>
+              <th>Visibility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of consolidatedWeatherList">
+              <th scope="row">{{c.created}}</th>
+              <td>{{c.weather_state_name}}</td>
+              <td>{{c.wind_speed}}</td>
+              <td>{{c.wind_direction_compass}}</td>
+              <td>{{c.min_temp}} - {{c.max_temp}}</td>
+              <td>{{c.air_pressure}}</td>
+              <td>{{c.humidity | humidityFlag}}</td>
+              <td>{{c.visibility}}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>

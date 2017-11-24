@@ -1,0 +1,10 @@
+<div class="card-block" style="padding: 3px 3px 3px 3px">
+    <div >
+      <agm-map [longitude]="getLong(passed_city.latt_long)" [latitude]="getLat(passed_city.latt_long)">
+          <agm-marker [latitude]="getLat(passed_city.latt_long)" [longitude]="getLong(passed_city.latt_long)"></agm-marker>
+      </agm-map>
+    </div>
+    <h4 class="card-title">
+        <a class="nav-link active" href="/city-weather/{{passed_city.woeid}}/{{passed_city.title}}/{{weatherForCity}}">{{passed_city.title | uppercase}}</a>
+    </h4>
+  </div>
